@@ -1,0 +1,6 @@
+[submodule "ofxOpenBCI"]
+	path = ofxOpenBCI
+	url = https://github.com/kentoids/ofxOpenBCI
+[submodule "ofxFaceTracker"]
+	path = ofxFaceTracker
+	url = https://github.com/kylemcdonald/ofxFaceTracker
