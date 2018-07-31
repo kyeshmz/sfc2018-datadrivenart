@@ -4,3 +4,6 @@
 [submodule "ofxFaceTracker"]
 	path = ofxFaceTracker
 	url = https://github.com/kylemcdonald/ofxFaceTracker
+[submodule "ofxPubSubOsc"]
+	path = ofxPubSubOsc
+	url = https://github.com/2bbb/ofxPubSubOsc
