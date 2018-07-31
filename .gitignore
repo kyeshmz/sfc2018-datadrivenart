@@ -1,59 +1,36 @@
-#########################
-# openFrameworks patterns
-#########################
+#.gitignore is a file which makes git ignore files which should
+# not go into version control in the first place
+# Questions? See
+# http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files
+# http://git-scm.com/docs/gitignore
 
-# build files
-openFrameworks.a
-openFrameworksDebug.a
-openFrameworksUniversal.a
-libs/openFrameworksCompiled/lib/*/*
-!libs/openFrameworksCompiled/lib/*/.gitkeep
+###########################
+# ignore generated binaries
+# but not the data folder
+###########################
 
-# apothecary
-scripts/apothecary
+/bin/*
+!/bin/data/
 
-# rule to avoid non-official addons going into git
-# see addons/.gitignore
-addons/*
-
-# rule to avoid non-official apps going into git
-# see apps/.gitignore
-apps/*
-
-# rule to ignore compiled / downloaded libs
-/libs/*
-!/libs/openFrameworks
-!/libs/openFrameworksCompiled
-
-# also, see examples/.gitignore
-
-#########################
+#########
 # general
-#########################
+#########
 
 [Bb]uild/
 [Oo]bj/
 *.o
-examples/**/[Dd]ebug*/
-examples/**/[Rr]elease*/
-examples/**/gcc-debug/
-examples/**/gcc-release/
-tests/**/[Dd]ebug*/
-tests/**/[Rr]elease*/
-tests/**/gcc-debug/
-tests/**/gcc-release/
+[Dd]ebug*/
+[Rr]elease*/
 *.mode*
 *.app/
 *.pyc
 .svn/
 *.log
-*.cpp.eep
-*.cpp.elf
-*.cpp.hex
 
-#########################
-# IDE
-#########################
+########################
+# IDE files which should
+# be ignored
+########################
 
 # XCode
 *.pbxuser
@@ -62,12 +39,8 @@ tests/**/gcc-release/
 *.mode1v3
 *.mode2v3
 # XCode 4
-xcuserdata
-*.xcworkspace
-
-# Code::Blocks
-*.depend
-*.layout
+*.xccheckout
+xcuserdata/
 
 # Visual Studio
 *.sdf
@@ -84,21 +57,14 @@ local.properties
 .externalToolBuilders
 
 # Android Studio
-.idea
 .gradle
-gradle
-gradlew
-gradlew.bat
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
 
-# QtCreator
-*.qbs.user
-*.pro.user
-*.pri
-
-
-#########################
+##################
 # operating system
-#########################
+##################
 
 # Linux
 *~
@@ -112,24 +78,15 @@ gradlew.bat
 *~.nib
 # Thumbnails
 ._*
-examples/ios/**/mediaAssets
 
 # Windows
-# Windows image file caches
+# Image file caches
 Thumbs.db
 # Folder config file
 Desktop.ini
 
 # Android
 .csettings
-/libs/openFrameworksCompiled/project/android/paths.make
 
-# Android Studio
-*.iml
 
-#########################
-# miscellaneous
-#########################
-
-.mailmap
-/apps*/
+OpenBCI_GUI
