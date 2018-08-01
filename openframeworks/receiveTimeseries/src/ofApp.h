@@ -1,10 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxOpenBCI.hpp"
+//#include "ofxOpenBCI.hpp"
 #include "ofxOsc.h"
 #include "ofxGui.h"
-#include "ofxPubSubOsc.h"
+//#include "ofxPubSubOsc.h"
 
 #define RECEIVE_PORT 12345
 #define RECEIVE_ADDRESS "/openbci"
@@ -36,11 +36,11 @@ class ofApp : public ofBaseApp{
     ofxPanel gui;
     ofxToggle sendOSC;
     
-    const int CHANNEL_NUM = 16;
-    const float BUFFER_TIME_SEC = 5.0;
-    vector <float> buffer_timeseries;
-    const int BUFFER_PER_CHANNEL = int(ofGetFrameRate()*BUFFER_TIME_SEC);
-    vector <float> receive_timeseries;
-    vector <ofColor> graphCol;
+    static const int CHANNEL_NUM = 16;
+    static constexpr float BUFFER_TIME_SEC = 5.0;
+    static const int BUFFER_PER_CHANNEL = int(30*BUFFER_TIME_SEC);
+    float buffer_timeseries[BUFFER_PER_CHANNEL * CHANNEL_NUM];
+    float receive_timeseries[CHANNEL_NUM];
+    ofColor graphCol[CHANNEL_NUM];
 //    ofColor col[];
 };
