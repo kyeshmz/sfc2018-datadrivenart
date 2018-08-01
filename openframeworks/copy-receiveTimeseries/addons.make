@@ -1,3 +1,4 @@
 ofxGui
 ofxOpenBCI
 ofxOsc
+ofxPubSubOsc

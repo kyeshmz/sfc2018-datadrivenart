@@ -2,13 +2,14 @@
 
 #include "ofMain.h"
 #include "ofxOpenBCI.hpp"
+#include "ofxOsc.h"
 #include "ofxGui.h"
+#include "ofxPubSubOsc.h"
 
-// Add the OpenBCI OSC Address here
-//listening on port
-
-#define PORT 12345
-#define SEND_PORT 8887
+#define RECEIVE_PORT 12345
+#define RECEIVE_ADDRESS "/openbci"
+#define SEND_HOST "127.0.0.1"
+#define SEND_PORT 8889
 
 class ofApp : public ofBaseApp{
 
@@ -16,6 +17,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+        void drawGraphs();
 
 		void keyPressed(int key);
 		void keyReleased(int key);
@@ -28,9 +30,17 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-    
-    ofxOpenBCIReceiver receiver;
-    ofxPanel gui;
-    ofxToggle log, add, smooth, range, send, printV;
 		
+    ofxOscReceiver receiver;
+    ofxOscSender sender;
+    ofxPanel gui;
+    ofxToggle sendOSC;
+    
+    const int CHANNEL_NUM = 16;
+    const float BUFFER_TIME_SEC = 5.0;
+    vector <float> buffer_timeseries;
+    const int BUFFER_PER_CHANNEL = int(ofGetFrameRate()*BUFFER_TIME_SEC);
+    vector <float> receive_timeseries;
+    vector <ofColor> graphCol;
+//    ofColor col[];
 };
