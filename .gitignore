@@ -76,8 +76,13 @@ local.properties
 .DS_Store
 *.swp
 *~.nib
+*.xcconfig
+*.xcworkspacedata
 # Thumbnails
 ._*
+*.plist
+
+
 
 # Windows
 # Image file caches
@@ -89,4 +94,4 @@ Desktop.ini
 .csettings
 
 
-OpenBCI_GUI
+OpenBCI_GUI.app
