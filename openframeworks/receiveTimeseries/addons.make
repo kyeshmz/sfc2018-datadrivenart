@@ -1,0 +1,4 @@
+ofxGui
+ofxOpenBCI
+ofxOsc
+ofxPubSubOsc
