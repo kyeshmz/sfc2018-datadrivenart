@@ -77,9 +77,22 @@ void setup(){
   for(int i = 0; i < CHANNEL_NUM; i++){
     receive_timeseries[i] = 0.0;
   }
-  for(int i = 0; i < CHANNEL_NUM; i++){
-    col[i] = color(random(100, 255), random(100, 255), random(100, 255));
-  }
+  col[0] = color(122);
+  col[1] = color(124, 75, 141);
+  col[2] = color(54, 87, 158);
+  col[3] = color(49, 113, 89);
+  col[4] = color(221, 178, 13);
+  col[5] = color(253, 94, 52);
+  col[6] = color(224, 56, 45);
+  col[7] = color(162, 82, 49);
+  col[8] = col[0];
+  col[9] = col[1];
+  col[10] = col[2];
+  col[11] = col[3];
+  col[12] = col[4];
+  col[13] = col[5];
+  col[14] = col[6];
+  col[15] = col[7];
   
   
 }
@@ -150,14 +163,19 @@ void drawGraphs(){
   }
   
   for(int i = 0; i < CHANNEL_NUM; i++){
-    stroke(col[i]);
     pushMatrix();
     translate(50, 110 + 30 * i);
-    text(i, 4, 0);
-    translate(15, 0);
+    noStroke();
+    fill(col[i]);
+    ellipse(0, 0, 40, 40);
+    fill(0);
+    text(i, 3, -3);
+    translate(20, 0);
+    stroke(col[i]);
     for(int j = 0; j < BUFFER_PER_CHANNEL-1; j++){
       line((BUFFER_PER_CHANNEL-j)*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j] * 0.1, (BUFFER_PER_CHANNEL-(j+1))*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j + 1] * 0.1);
     }
+    text(receive_timeseries[i], BUFFER_PER_CHANNEL * 3 + 10, 0);
     popMatrix();
   }
 }
