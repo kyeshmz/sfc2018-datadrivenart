@@ -167,14 +167,15 @@ void drawGraphs(){
     translate(50, 110 + 30 * i);
     noStroke();
     fill(col[i]);
-    ellipse(0, 0, 40, 40);
-    fill(0);
-    text(i, 3, -3);
+    ellipse(1, -4, 25, 25);
+    textAlign(CENTER);
+    text(i, 0, 0);
     translate(20, 0);
     stroke(col[i]);
     for(int j = 0; j < BUFFER_PER_CHANNEL-1; j++){
       line((BUFFER_PER_CHANNEL-j)*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j] * 0.1, (BUFFER_PER_CHANNEL-(j+1))*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j + 1] * 0.1);
     }
+    textAlign(LEFT);
     text(receive_timeseries[i], BUFFER_PER_CHANNEL * 3 + 10, 0);
     popMatrix();
   }
