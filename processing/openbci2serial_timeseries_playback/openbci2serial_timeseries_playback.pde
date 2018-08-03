@@ -3,7 +3,7 @@ import processing.serial.*;
 import controlP5.*;
 
 final String FILENAME = "file.txt";
-final int CHANNEL_NUM = 8;
+final int CHANNEL_NUM = 16;
 float[] receive_timeseries = new float[CHANNEL_NUM];
 
 //serial
