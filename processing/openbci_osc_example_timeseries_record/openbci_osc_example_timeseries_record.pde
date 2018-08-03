@@ -4,7 +4,7 @@
 //push "stop" button to stop button
 //txt file was made in a file
 
-final int CHANNEL_NUM = 16;
+final int CHANNEL_NUM = 8;
 
 //import library
 import oscP5.*;
@@ -85,14 +85,14 @@ void setup(){
   col[5] = color(253, 94, 52);
   col[6] = color(224, 56, 45);
   col[7] = color(162, 82, 49);
-  col[8] = col[0];
-  col[9] = col[1];
-  col[10] = col[2];
-  col[11] = col[3];
-  col[12] = col[4];
-  col[13] = col[5];
-  col[14] = col[6];
-  col[15] = col[7];
+  //col[8] = col[0];
+  //col[9] = col[1];
+  //col[10] = col[2];
+  //col[11] = col[3];
+  //col[12] = col[4];
+  //col[13] = col[5];
+  //col[14] = col[6];
+  //col[15] = col[7];
   
   
 }
@@ -169,6 +169,7 @@ void drawGraphs(){
     fill(col[i]);
     ellipse(1, -4, 25, 25);
     textAlign(CENTER);
+    fill(0);
     text(i, 0, 0);
     translate(20, 0);
     stroke(col[i]);
@@ -176,6 +177,7 @@ void drawGraphs(){
       line((BUFFER_PER_CHANNEL-j)*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j] * 0.1, (BUFFER_PER_CHANNEL-(j+1))*3, buffer_timeseries[i * BUFFER_PER_CHANNEL + j + 1] * 0.1);
     }
     textAlign(LEFT);
+    fill(0);
     text(receive_timeseries[i], BUFFER_PER_CHANNEL * 3 + 10, 0);
     popMatrix();
   }
