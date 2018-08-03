@@ -1,2 +1,2 @@
 ofxOsc
-../../addons/ofxPubSubOsc
+addons/ofxPubSubOsc
