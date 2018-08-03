@@ -1,2 +1,2 @@
-ofxOpenBCI
+../../ofxOpenBCI
 ofxOsc

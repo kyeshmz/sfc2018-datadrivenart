@@ -1,4 +1,4 @@
 ofxGui
-ofxOpenBCI
+../../ofxOpenBCI
 ofxOsc
-ofxPubSubOsc
+../../ofxPubSubOsc
